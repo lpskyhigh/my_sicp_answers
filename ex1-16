@@ -1,0 +1,6 @@
+(define (fast-expt b n)
+    (define (helper a b n)
+        (cond ((= n 0) a)
+              ((even? n) (helper a (* b b) (/ n 2))) 
+              (else (helper (* a b) b (- n 1)))))
+    (helper 1 b n))
